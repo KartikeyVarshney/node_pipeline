@@ -2,7 +2,9 @@ node{
     def dockerImage
     stage('Checkout')
     {
-        git 'https://github.com/KartikeyVarshney/node_pipeline.git'
+       checkout([$class:'GitSCM',
+            branches: [[name:'*/main']] ,
+            userRemoteConfigs : [[url: 'https://github.com/KartikeyVarshney/node_pipeline.git']]])
     }
     stage('Build Docker Image')
     {
