@@ -13,6 +13,7 @@ app.get("/", async (req, res) => {
     }
 
     const result = await response.json();
+    console.log(result)
     res.send(`<div style="height:100vh; width:100vw; display:grid; place-items:center">
       <img src=${result.message} style="height:500px ; width:500px" />
       </div>
